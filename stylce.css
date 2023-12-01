@@ -1,0 +1,332 @@
+:root{
+    --Linear-gradient: hsl(249, 99%, 64%);
+    --to: hsl(278, 94%, 30%);
+    --input-errors: hsl(0, 100%, 66%);
+
+/* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body{
+    position: relative;
+}
+.bottom{
+    position: absolute;
+    z-index: -2;
+    height: 100vh;
+    width: 100%;
+    display: flex;    
+}
+.top{
+    position: absolute;
+    z-index: 3;
+    width: 450px; 
+    height: 300px;
+    margin-left: 150px;
+
+}
+
+.top .front{
+    width: 400px;
+    height: 250px;
+    background-image: url(./images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: white;
+    margin-top: 3rem;
+}
+
+.top .front h3{
+    margin-top: 3rem;
+    font-size: 30px;
+
+}
+.top .front .name{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.top .back{
+    width: 400px;
+    height: 250px;
+    background-image: url(./images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: white;
+}
+
+.top .back .cvv{
+    margin: 3rem;
+    font-size: 1.3rem;
+
+}
+
+
+.left{
+    height: 100vh;
+    width: 35%;
+    background-image: url(./images/bg-main-desktop.png);
+    background-size: cover;
+   
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 15rem;
+}
+
+.right form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.right form input{
+    width: 400px;
+    height: 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--Dark-grayish-violet);
+    margin-top: 10px;
+}
+.right form .card{
+    display: flex;
+}
+
+.right form .card .expiry{
+    margin-right: 20px;
+}
+.right form .card .expiry input{
+    width: 90px;
+    margin-right: 5px;
+   
+}
+.right form .cvv{
+    display: flex;
+    flex-direction: column;
+}
+.right form .cvv input{
+    width: 190px;
+   
+}
+
+.right form #confirm{
+    height: 50px;
+    background-color: var(--Very-dark-violet);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.thank-you{
+    position: absolute;
+    z-index: 4;
+    background-color: white;
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.thank-you img{
+    height: 70px;
+    width: 70px;
+    margin-bottom: 2rem;
+}
+.thank-you h2{
+    margin-bottom: 2rem;
+}
+
+.thank-you button{
+    background-color: var(--Very-dark-violet);
+    color: white;
+    width: 50%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    position: relative;
+    margin-top: 10rem;
+    display: none;
+    
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 500px) {
+    .bottom{
+        position: absolute;
+        z-index: -2;
+        height: 100vh;
+        width: 100%;
+        display: flex; 
+        flex-direction: column;   
+    }
+    .left{
+        height: 30vh;
+        width: 100%;
+        background-image: url(./images/bg-main-mobile.png);
+        background-size: cover;
+       
+    }
+
+    .top{
+        position: absolute;
+        z-index: 100;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 0rem;
+        width: 100%; 
+        height: 200px;
+        margin-left: 1rem;
+    }
+    
+    .top .front{
+        width: 280px;
+        height: 180px;
+        background-image: url(./images/bg-card-front.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        color: white;
+        margin-top: 8rem; 
+        z-index: 10;   
+        position: absolute;
+        top: 0rem;  
+    }
+    .top .front img{
+        height: 20px;
+    }
+    .top .front h3{
+        margin-top: 3rem;
+        font-size: 15px;
+    
+    }
+    .top .front .name{
+        margin-top: 1rem;
+    }
+    .top .back{
+        width: 280px;
+        height: 180px;
+        background-image: url(./images/bg-card-back.png);
+         background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0.5rem;
+        margin-left: 0rem;
+        
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        color: white;    
+        z-index: 8;   
+        position: absolute;
+        margin-left: 6rem; 
+    }
+
+    .top .back .cvv{
+        margin: 3rem;
+        font-size: 1rem;
+    
+    }
+
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 1rem;
+    }
+    .right form{
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+        
+    }
+
+    .right form input{
+        width: 100%;
+        height: 50px;
+        padding: 5px ;
+        border-radius: 10px;
+        border: 1px solid var(--Dark-grayish-violet);
+        margin-top: 10px;
+    }
+
+    .right form .cvv{
+        display: flex;
+        flex-direction: column;
+    }
+    .right form .cvv input{
+        width: 150px;
+       
+    }
+
+    .thank-you{
+        position: absolute;
+        z-index: 4;
+        background-color: white;
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+    
+    .thank-you img{
+        height: 70px;
+        width: 70px;
+        margin-bottom: 2rem;
+    }
+    .thank-you h2{
+        margin-bottom: 2rem;
+    }
+    
+    .thank-you button{
+        background-color: var(--Very-dark-violet);
+        color: white;
+        width: 100%;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        border: none;
+    }
+    
+}
